@@ -4,13 +4,13 @@
 // require the 'request-promise' module.
 const request = require('request-promise')
 
-const uri = 'https://journeyedu.herokuapp.com'
-const url = '/hello'
+const baseUrl = 'https://journeyedu.herokuapp.com'
+const endpoint = '/hello'
 
 const testGreeting = () => {
-  return request(uri + url)
+  return request(baseUrl + endpoint)
     .then(res => JSON.parse(res))
-    .then(parsedRes => console.log(parsedRes.data.text))
+    .then(parsedRes => parsedRes.data.text)
     .catch(err => console.log('Error: ', err))
 }
 
