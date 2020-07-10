@@ -1,5 +1,11 @@
 # Module 3-6 - APIs and Promises
 
+## Setup
+
+- `yarn install`
+
+You will not need to spin up a server in this workshop. You can "run" the files individually in the terminal by doing `node <PATH_TO_FILE>`
+
 ## Example
 
 Here is an example. There is nothing to do for this example. You can use it as a guide, and to better understand Promises.
