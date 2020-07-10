@@ -1,10 +1,23 @@
-// Exercise 1 - `getIssPosition`
-// -----------------------------
+// Exercise 1
+// ------------
+const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
+const complicatedArray = ['cucumber', 44, true];
 
-// require the 'request-promise' module.
+const makeAllCaps = (array) => {
+  // write some code
+};
 
+const sortWords = (array) => {
+  // write some code
+};
 
-// Returns the current position of the ISS
-function getIssPosition() {
+// Calling (testing)
+makeAllCaps(arrayOfWords)
+  .then(sortWords)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
 
-}
+makeAllCaps(complicatedArray)
+  .then(sortWords)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
