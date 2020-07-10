@@ -25,7 +25,7 @@ const getPositionFromAddress = (address) => {
 
 const addresses = [
   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8',
-  '5455 Grande-Allee Brossard, QC J4Z3H1',
+  '5455 Grande-Allee Brossard, QC J4Z 3H1',
   '2035A Rue Victoria, Brossard, QC J4S 1H1'
 ]
 
