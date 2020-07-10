@@ -2,17 +2,16 @@
 // ----------------------
 
 // require the 'request-promise' module.
-const request = require('request-promise');
+const request = require('request-promise')
+
+const uri = 'https://journeyedu.herokuapp.com'
+const url = '/hello'
 
 const testGreeting = () => {
-  return request('<API_URL') // 1
-    .then((response) => {
-      return; // 2
-    })
-    .then((parsedResponse) => {
-      return; // 3
-    })
-    .catch((err) => console.log('Error: ', err));
-};
+  return request(uri + url)
+    .then(res => JSON.parse(res))
+    .then(parsedRes => console.log(parsedRes.data.text))
+    .catch(err => console.log('Error: ', err))
+}
 
-testGreeting().then((result) => console.log(result));
+testGreeting().then(result => console.log(result))
