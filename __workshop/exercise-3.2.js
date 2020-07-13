@@ -4,23 +4,20 @@
 const opencage = require('opencage-api-client')
 require('dotenv').config({ path: '../.env' })
 
-const getPositionFromAddress = (address) => {
+const getPositionFromAddress = address => {
   const requestObj = {
     key: process.env.OPENCAGE_API_KEY,
     q: address,
   }
 
-  return (
-    opencage
-      .geocode(requestObj)
-      .then(data => {
-        if (data.status.code == 200 && data.results.length > 0) {
-          const place = data.results[0]
-          return place.geometry
-        }
-      })
-      .catch(err => console.log('error', err.message))
-  )
+  return opencage
+    .geocode(requestObj)
+    .then(data => {
+      if (data.status.code == 200 && data.results.length > 0) {
+        const place = data.results[0]
+        return place.geometry
+      }
+    })
 }
 
 const addresses = [
@@ -30,5 +27,9 @@ const addresses = [
 ]
 
 addresses.forEach(address => {
-  getPositionFromAddress(address).then(res => console.log(res))
+  getPositionFromAddress(address)
+    .then(position => console.log('3.2', position))
+    .catch(error => console.log(error))
 })
+
+module.exports = { getPositionFromAddress }

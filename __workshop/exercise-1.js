@@ -5,25 +5,19 @@ const complicatedArray = ['cucumber', 44, true]
 const error = 'Not every element in this array is a string.'
 
 const makeAllCaps = array => {
-  return (
-    new Promise((resolve, reject) => {
-      if(array.every(word => typeof word === 'string'))
-        resolve(array.map(word => word.toUpperCase()))
-      else
-        reject(error)
-    })
-  )
+  return new Promise((resolve, reject) => {
+    array.every(word => typeof word === 'string')
+      ? resolve(array.map(word => word.toUpperCase()))
+      : reject(error)
+  })
 }
 
 const sortWords = array => {
-  return (
-    new Promise((resolve, reject) => {
-      if(array.every(word => typeof word === 'string'))
-        resolve(array.sort())
-      else
-        reject(error)
-    })
-  )
+  return new Promise((resolve, reject) => {
+    array.every(word => typeof word === 'string')
+      ? resolve(array.sort())
+      : reject(error)
+  })
 }
 
 // Calling (testing)

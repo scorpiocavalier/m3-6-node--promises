@@ -10,16 +10,14 @@ function getAddressFromPosition(lat, lng) {
     q: `${lat}, ${lng}`
   }
 
-  return (
-    opencage
-      .geocode(requestObj)
-      .then(data => {
-        if(data.status.code == 200 && data.results.length > 0) {
-          let place = data.results[0]
-          return place.formatted
-        }
-      })
-  )
+  return opencage
+    .geocode(requestObj)
+    .then(data => {
+      if(data.status.code == 200 && data.results.length > 0) {
+        let place = data.results[0]
+        return place.formatted
+      }
+    })
 }
 
 const addresses = [
@@ -31,5 +29,7 @@ const addresses = [
 
 addresses.forEach(address => {
   const { lat, lng } = address
-  getAddressFromPosition(lat, lng).then(res => console.log(res))
+  getAddressFromPosition(lat, lng)
+    .then(address => console.log(address))
+    .catch(error => console.log(error))
 })

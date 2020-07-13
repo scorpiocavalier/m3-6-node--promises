@@ -4,14 +4,11 @@
 // a Promise that tests if the value is less than or greater than the value 10.
 
 const compareToTen = num => {
-  return (
-    new Promise((resolve, reject) => {
-      if(num > 10)
-        resolve(`${num} + is greater than 10, success!`)
-      else
-        reject(`${num} is less than 10, error!`)
-    })
-  )
+  return new Promise((resolve, reject) => {
+    num > 10
+      ? resolve(`${num} is greater than 10, success!`)
+      : reject(`${num} is less than 10, error!`)
+  })
 }
 
 // Calling the Promise
