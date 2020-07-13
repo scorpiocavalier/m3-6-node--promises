@@ -15,10 +15,11 @@ const getIssPosition = () => {
       let { longitude, latitude } = parsedData.iss_position
       return { lat: Number(latitude), lng: Number(longitude) }
     })
+    .catch('Something went wrong with request-promise call.')
 }
 
-getIssPosition()
-  .then(position => console.log('3.1', position))
-  .catch(error => console.log(error))
+// getIssPosition()
+//   .then(position => console.log('3.1', position))
+//   .catch(error => console.log(error))
 
 module.exports = { getIssPosition }

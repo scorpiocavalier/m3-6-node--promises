@@ -18,6 +18,7 @@ const getPositionFromAddress = address => {
         return place.geometry
       }
     })
+    .catch('Something went wrong with opencage call.')
 }
 
 const addresses = [
@@ -26,10 +27,10 @@ const addresses = [
   '2035A Rue Victoria, Brossard, QC J4S 1H1'
 ]
 
-addresses.forEach(address => {
-  getPositionFromAddress(address)
-    .then(position => console.log('3.2', position))
-    .catch(error => console.log(error))
-})
+// addresses.forEach(address => {
+//   getPositionFromAddress(address)
+//     .then(position => console.log('3.2', position))
+//     .catch(error => console.log(error))
+// })
 
 module.exports = { getPositionFromAddress }
