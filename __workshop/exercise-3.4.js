@@ -18,11 +18,9 @@ const getDistance = (pos1, pos2) => {
     ))
 }
 
-const getDistanceFromIss = address => {
-  return getPositionFromAddress(address)
-    .then(pos1 => getIssPosition()
-      .then(pos2 => getDistance(pos1, pos2))
-    )
+const getDistanceFromIss = async address => {
+  const data = await Promise.all([getPositionFromAddress(address), getIssPosition()])
+  return getDistance(data[0], data[1])
 }
 
 addresses.forEach(address => {
